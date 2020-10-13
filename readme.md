@@ -1,7 +1,7 @@
 ## :speech_balloon: Enigma Machine
 
-The Enigma Machine was designed by Germany during the second world war.
-It was used to send encrypted messages, and was the world's most complex cryptography system at the time.
+The Enigma Machine was designed by **Germany** during the **World War II**.
+It was used to send **encrypted messages**, and was the **world's most complex cryptography system** at the time.
 
 This project simulates the original Enigma Machine by converting every mechanical operation into programming logic.
 
