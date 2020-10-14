@@ -21,7 +21,7 @@ def rotate_rotor(rotor_index, rotate_next):
     rotors[rotor_index] = result_rotor
 
     rotors_rotations[rotor_index] = rotors_rotations[rotor_index] + 1
-    if (rotate_next & rotors_rotations[rotor_index] >= len(alphabet)):
+    if (rotate_next & (rotors_rotations[rotor_index] >= len(alphabet))):
         rotors_rotations[rotor_index] = 0
         next_rotor = rotor_index + 1 if rotor_index < len(rotors) - 1 else 0
         rotate_rotor(next_rotor, rotate_next)
