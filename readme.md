@@ -25,16 +25,16 @@ The output is going to be **unique to the current settings**. That means the onl
 ## ⚙️ Custom setup
 If you want or need to customize the machine's settings, here's a step-by-step:
 
-**1. Alphabet**
-The alphabet defines which characters are going to be supported by the Enigma.
-This is up to you. The only requirement is that the total number of characters **must be even**.
+**1. Alphabet**<br>
+The alphabet defines which characters are going to be supported by the Enigma.<br>
+This is up to you. The only requirement is that the total number of characters **must be even**.<br>
 Example:
 
     "alphabet": ["a", "b", "c", "d", "e", "f", ...]
 
-**2. Rotors**
-Each rotor must contain every number from **0** to the **length of the alphabet** you define **-1**.
-I recommend you use any online list randomizer to define the values of each rotor.
+**2. Rotors**<br>
+Each rotor must contain every number from **0** to the **length of the alphabet** you define **-1**.<br>
+I recommend you use any online list randomizer to define the values of each rotor.<br>
 Example:
 
     "rotors": [
@@ -43,13 +43,13 @@ Example:
 	    [9,33,36,14,34,6,13,4,30,31,21,20,2,27,25,16,3,...]
     ]
 
-**3. Initial rotations**
-The initial rotation count of each rotor also needs to be randomized, like so:
+**3. Initial rotations**<br>
+The initial rotation count of each rotor also needs to be randomized, like so:<br>
 
     "initial_rotor_rotations": [10, 5, 21]
 
-**4. Plugboard**
-The plugboard basically re-routes every letter, or every index.
+**4. Plugboard**<br>
+The plugboard basically re-routes every letter, or every index.<br>
 It also needs to be randomized, but it's a little more specific:
 - It must contain every index from **0** to the **length of the alphabet** you define **-1**;
 - Every index must be linked to another one;
@@ -60,9 +60,9 @@ Example:
     "plugboard": [[0, 2], [8, 7], [23, 10], ...]
 
 
-**5. Reflector**
-The reflector is responsible to send the signal back into the rotors.
-It's requirements are **exactly the same as the Plugboard's**.
+**5. Reflector**<br>
+The reflector is responsible to send the signal back into the rotors.<br>
+It's requirements are **exactly the same as the Plugboard's**.<br>
 Example:
 
 	"reflector": [[1, 9], [15, 3], [2, 17], ...]
