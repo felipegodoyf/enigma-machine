@@ -9,7 +9,20 @@ def load_settings():
 
 
 def rotate_rotor(rotor_index, rotate_next):
+    # rotating
     rotor = rotors[rotor_index]
+    rotors[rotor_index] = get_rotated_rotor(rotor)
+
+    # counting total rotations
+    add_rotor_rotation(rotor_index)
+
+    # rotating next rotor if needed
+    if (rotate_next & (rotor_rotation_count[rotor_index] >= len(alphabet))):
+        rotor_rotation_count[rotor_index] = 0
+        next_rotor = rotor_index + 1 if rotor_index < (len(rotors) - 1) else 0
+        rotate_rotor(next_rotor, rotate_next)
+
+def get_rotated_rotor(rotor):
     result_rotor = []
 
     last_index = len(rotor) - 1
@@ -18,13 +31,11 @@ def rotate_rotor(rotor_index, rotate_next):
     for i in range(0, len(rotor) - 1):
         result_rotor.append(rotor[i])
 
-    rotors[rotor_index] = result_rotor
+    return result_rotor
 
-    rotors_rotations[rotor_index] = rotors_rotations[rotor_index] + 1
-    if (rotate_next & (rotors_rotations[rotor_index] >= len(alphabet))):
-        rotors_rotations[rotor_index] = 0
-        next_rotor = rotor_index + 1 if rotor_index < len(rotors) - 1 else 0
-        rotate_rotor(next_rotor, rotate_next)
+def add_rotor_rotation(rotor_index):
+    rotor_rotation_count[rotor_index] = rotor_rotation_count[rotor_index] + 1
+    return{}
 
 
 def plugboard_convert(number):
@@ -79,7 +90,7 @@ else:
 input_message = filter_message(input_message)
 
 # internal variables
-rotors_rotations = [0, 0, 0]
+rotor_rotation_count = [0, 0, 0]
 output_message = ''
 
 # setting up rotors initial state
@@ -89,7 +100,7 @@ for i in range(0, len(initial_rotor_rotations)):
         rotate_rotor(i, rotate_next)
 
 # resetting rotation counter
-rotors_rotations = [0, 0, 0]
+rotor_rotation_count = [0, 0, 0]
 
 # main process
 for i in range(0, len(input_message)):

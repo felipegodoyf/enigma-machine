@@ -79,4 +79,4 @@ settings['plugboard'] = plugboard
 settings['reflector'] = reflector
 save_settings(settings)
 
-print('sucessfully randomized.')
+print('successfully randomized.')
