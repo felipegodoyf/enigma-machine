@@ -23,11 +23,14 @@ def rotate_rotor(rotor_index, rotate_next):
         rotate_rotor(next_rotor, rotate_next)
 
 def get_rotated_rotor(rotor):
+    # instantiating empty rotor
     result_rotor = []
 
+    # getting last value
     last_index = len(rotor) - 1
     result_rotor.append(rotor[last_index])
 
+    # getting other values
     for i in range(0, len(rotor) - 1):
         result_rotor.append(rotor[i])
 
@@ -75,16 +78,19 @@ rotors = settings['rotors']
 reflector = settings['reflector']
 initial_rotor_rotations = settings['initial_rotor_rotations']
 
-# getting input message
+# getting input message from argument
 if (len(sys.argv) == 2):
     argument = sys.argv[1]
+    # argument refers to a file
     if (os.path.exists(os.path.dirname(argument))):
         print('reading input from file "' + argument + '":')
         with open(argument, 'r') as file:
             input_message = file.read()
         print(input_message)
+    # argument is the message
     else:
         input_message = argument
+# getting input from user
 else:
     input_message = input('\ninput: ')
 input_message = filter_message(input_message)
