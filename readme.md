@@ -30,7 +30,7 @@ The alphabet defines which characters are going to be supported by the Enigma.<b
 This is up to you. The only requirement is that the total number of characters **must be even**.<br>
 Example:
 
-    "alphabet": ["a", "b", "c", "d", "e", "f", ...]
+    "alphabet": "abcdef..."
 
 **2. Rotors**<br>
 Each rotor must contain every number from **0** to the **length of the alphabet** you define **-1**.<br>
