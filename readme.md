@@ -14,7 +14,7 @@ To do so, you can execute `setup.py`, which will do everything automatically for
 If you want, you can also customize which characters are going to be supported by the Enigma by changing the property "alphabet", in `settings.json`. Remember to run the setup again if you do so.
 
 ## :rocket: Executing
-From the project root folder, you can use any of the following commands to run Enigma:
+From the project's root folder, you can use any of the following commands to run Enigma:
 
     python enigma.py
     python enigma.py "message"
