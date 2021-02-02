@@ -22,6 +22,7 @@ def rotate_rotor(rotor_index, rotate_next):
         next_rotor = rotor_index + 1 if rotor_index < (len(rotors) - 1) else 0
         rotate_rotor(next_rotor, rotate_next)
 
+
 def get_rotated_rotor(rotor):
     # instantiating empty rotor
     result_rotor = []
@@ -35,6 +36,7 @@ def get_rotated_rotor(rotor):
         result_rotor.append(rotor[i])
 
     return result_rotor
+
 
 def add_rotor_rotation(rotor_index):
     rotor_rotation_count[rotor_index] = rotor_rotation_count[rotor_index] + 1
